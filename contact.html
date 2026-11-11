@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/icon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Daybreak Planner | Email Support</title>
+  <meta name="description" content="Contact Daybreak Planner by email for questions, feedback, or support with the daily task planner.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b111f">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Daybreak Planner">
+  <meta property="og:title" content="Contact Daybreak Planner">
+  <meta property="og:description" content="Email Daybreak Planner with your questions, feedback, or support requests.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact Daybreak Planner">
+  <meta name="twitter:description" content="Email Daybreak Planner with your questions, feedback, or support requests.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      background: #000;
+    }
+
+    /* Background image */
+    .background {
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)),
+        url("images/bg.png") center/cover no-repeat;
+      transform: scale(1.05);
+      animation: backgroundZoom 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes backgroundZoom {
+      from {
+        transform: scale(1.05);
+      }
+      to {
+        transform: scale(1.15);
+      }
+    }
+
+    /* Center content */
+    .content {
+      position: relative;
+      z-index: 10;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      padding: 20px;
+    }
+
+    /* Typewriter text */
+    .typewriter {
+      color: white;
+      font-size: clamp(2rem, 6vw, 6rem);
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.45),
+        0 0 16px rgba(100, 180, 255, 0.3);
+      border-right: 5px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 22ch;
+      max-width: 100%;
+      text-align: center;
+      animation:
+        typing 4s steps(22, end) forwards,
+        blink 0.8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        clip-path: inset(0 100% 0 0);
+      }
+      to {
+        clip-path: inset(0 0 0 0);
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    /* Bubble container */
+    .bubbles {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* Individual bubbles */
+    .bubble {
+      position: absolute;
+      bottom: -150px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      box-shadow:
+        inset 8px 8px 15px rgba(255, 255, 255, 0.12),
+        0 0 25px rgba(255, 255, 255, 0.15);
+      animation: floatUp linear infinite;
+    }
+
+    .bubble::after {
+      content: "";
+      position: absolute;
+      width: 30%;
+      height: 20%;
+      top: 18%;
+      left: 20%;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      filter: blur(3px);
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) translateX(0) scale(0.8);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: translateY(-55vh) translateX(50px) scale(1);
+      }
+
+      100% {
+        transform: translateY(-120vh) translateX(-30px) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* Different bubble sizes and positions */
+    .bubble:nth-child(1) {
+      left: 5%;
+      width: 60px;
+      height: 60px;
+      animation-duration: 12s;
+      animation-delay: 0s;
+    }
+
+    .bubble:nth-child(2) {
+      left: 15%;
+      width: 110px;
+      height: 110px;
+      animation-duration: 18s;
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(3) {
+      left: 28%;
+      width: 45px;
+      height: 45px;
+      animation-duration: 10s;
+      animation-delay: 5s;
+    }
+
+    .bubble:nth-child(4) {
+      left: 40%;
+      width: 140px;
+      height: 140px;
+      animation-duration: 20s;
+      animation-delay: 1s;
+    }
+
+    .bubble:nth-child(5) {
+      left: 55%;
+      width: 80px;
+      height: 80px;
+      animation-duration: 14s;
+      animation-delay: 4s;
+    }
+
+    .bubble:nth-child(6) {
+      left: 67%;
+      width: 120px;
+      height: 120px;
+      animation-duration: 22s;
+      animation-delay: 3s;
+    }
+
+    .bubble:nth-child(7) {
+      left: 78%;
+      width: 55px;
+      height: 55px;
+      animation-duration: 11s;
+      animation-delay: 6s;
+    }
+
+    .bubble:nth-child(8) {
+      left: 88%;
+      width: 100px;
+      height: 100px;
+      animation-duration: 17s;
+      animation-delay: 0s;
+    }
+
+    .bubble:nth-child(9) {
+      left: 35%;
+      width: 70px;
+      height: 70px;
+      animation-duration: 16s;
+      animation-delay: 8s;
+    }
+
+    .bubble:nth-child(10) {
+      left: 92%;
+      width: 40px;
+      height: 40px;
+      animation-duration: 9s;
+      animation-delay: 3s;
+    }
+
+    @media (max-width: 600px) {
+      .typewriter {
+        white-space: normal;
+        border-right-width: 3px;
+        animation: none;
+        width: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="background"></div>
+
+  <!-- Flying translucent bubbles -->
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <!-- Center animated text -->
+  <main class="content">
+    <h3 style="color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: clamp(1.5rem, 4vw, 4rem);">Email : </h3>
+    <h1 class="typewriter">sakshamy744@gmail.com</h1>
+  </main>
+
+</body>
+</html>
