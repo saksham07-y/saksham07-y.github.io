@@ -1,0 +1,22 @@
+{
+  "name": "Daybreak Planner",
+  "short_name": "Daybreak",
+  "description": "Paste your tasks, get a timed daily schedule with reminders, notes, subtasks and tick sounds.",
+  "id": "/index.html",
+  "start_url": "./index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f6fa",
+  "theme_color": "#ff7a45",
+  "categories": ["productivity", "lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Try the parser", "url": "./index.html#try", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Get the app", "url": "./index.html#get", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

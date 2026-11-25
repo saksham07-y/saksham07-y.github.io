@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daybreak Planner: timed daily schedule, reminders and tick sounds</title>
+<meta name="description" content="A free daily planner. Paste your tasks and get a timed schedule with reminders, notes for each day, subtasks and tick sounds. Works in the browser, installs as an app, and ships on Android.">
+<meta name="theme-color" content="#f4f6fa">
+<meta name="application-name" content="Daybreak">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Daybreak">
+<meta name="author" content="Arcar">
+<meta property="og:title" content="Daybreak Planner: make a plan, make room for life">
+<meta property="og:description" content="Paste your tasks. Get a calm, timed day. Reminders, notes, subtasks and tick sounds.">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="icons/favicon.ico">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/theme.js"></script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol><symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol><symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></symbol><symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol><symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol><symbol id="i-chevup" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></symbol><symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></symbol><symbol id="i-note" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol><symbol id="i-listcheck" viewBox="0 0 24 24"><path d="M11 6h10M11 12h10M11 18h10M3 6l1.5 1.5L7 5M3 12l1.5 1.5L7 11M3 18l1.5 1.5L7 17"/></symbol><symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 1 10-10c0 3-2 4-4 4h-2a2 2 0 0 0-1 3.7c.6.5.4 2.3-3 2.3z"/><circle cx="7.5" cy="11" r="1" fill="currentColor"/><circle cx="12" cy="7.5" r="1" fill="currentColor"/><circle cx="16.5" cy="11" r="1" fill="currentColor"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></symbol><symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/></symbol><symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol><symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol><symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></symbol><symbol id="i-android" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z" fill="currentColor"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/></symbol><symbol id="i-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol><symbol id="i-right" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol><symbol id="i-logo" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" style="fill:var(--logo-bg)"/><path d="M19.5 423.0 19.5 460.0 21.0 461.5 473.5 462.0 491.0 461.5 492.0 460.0 492.0 422.5 490.5 421.0 21.0 421.0zM70.0 365.5 71.5 374.0 440.0 374.0 441.5 372.5 437.5 333.5 427.5 302.5 412.0 273.0 390.5 246.0 361.5 221.0 336.0 206.0 301.5 193.5 279.5 189.5 259.5 188.0 225.5 190.5 188.5 200.5 157.0 216.5 129.0 238.0 102.0 269.5 86.0 298.0 74.5 332.0zM419.5 149.5 417.0 150.0 372.0 195.5 373.5 199.0 399.0 224.0 404.5 221.0 446.5 178.0zM92.5 149.5 66.0 175.5 65.5 179.0 110.5 224.0 112.5 224.0 139.5 197.5 139.5 195.0 95.5 150.5zM237.0 70.0 235.5 71.5 235.5 137.0 275.0 138.0 276.5 136.0 275.5 70.5z" style="fill:var(--logo-sun)" transform="translate(256 256) scale(.86) translate(-256 -256)"/></symbol></defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="Daybreak home">
+      <svg class="logo-svg" width="30" height="30" viewBox="0 0 512 512" aria-hidden="true"><use href="#i-logo"/></svg>
+      <span>daybreak<i>.</i></span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#try">Try it</a>
+      <a href="#themes">Themes</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-tools">
+      <label class="sr-only" for="themeSel">Theme</label>
+      <select id="themeSel" data-theme-select>
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="bluegray">Blue gray</option>
+        <option value="contrast">High contrast</option>
+      </select>
+      <a class="btn primary small" href="https://saksham07-y.github.io/Daybreak_compose/" target="_blank" rel="noopener">Open web app</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="sky" aria-hidden="true">
+    <div class="sun"><span></span></div>
+    <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+    <span class="star s1"></span><span class="star s2"></span><span class="star s3"></span><span class="star s4"></span><span class="star s5"></span>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow reveal"><svg class="i" aria-hidden="true"><use href="#i-sun"/></svg> A little more clarity, every day</p>
+      <h1 class="reveal d1">Make a plan.<br><em>Make room for life.</em></h1>
+      <p class="lead reveal d2">Paste a messy list of what you need to do. Daybreak turns it into a timed, editable day with reminders, notes, subtasks and satisfying tick sounds. Free, private and works offline.</p>
+      <div class="cta reveal d3">
+        <a class="btn primary" href="https://saksham07-y.github.io/Daybreak_compose/" target="_blank" rel="noopener">Open the web app <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn" href="#how">See how it works</a>
+      </div>
+      <ul class="trust reveal d4">
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> No account</li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> No AI, no upload</li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> Saved on your device</li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> Web + Android</li>
+      </ul>
+    </div>
+
+    <div class="phone-wrap reveal d2">
+      <div class="phone" role="img" aria-label="Animated demo: typed text turning into a timed schedule">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="scr-top"><b>Today</b><span id="demoDate">Monday</span></div>
+          <div class="typing"><span id="typed"></span><i class="caret"></i></div>
+          <div class="arrow-down"><svg class="i" aria-hidden="true"><use href="#i-down"/></svg> <small>auto-converted</small></div>
+          <ul class="demo-tasks" id="demoTasks"></ul>
+          <div class="scr-bar"><span><svg class="i" aria-hidden="true"><use href="#i-chevup"/></svg> Day summary</span><em id="demoPct">0%</em></div>
+        </div>
+      </div>
+      <div class="chip chip-a"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg> Walk starts in 5 min</div>
+      <div class="chip chip-b"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> tick!</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>Study plans</span><span>Timetables</span><span>Daily routines</span><span>Time blocking</span><span>Exam prep</span><span>Work sprints</span><span>Habit days</span><span>Weekend resets</span>
+        <span>Study plans</span><span>Timetables</span><span>Daily routines</span><span>Time blocking</span><span>Exam prep</span><span>Work sprints</span><span>Habit days</span><span>Weekend resets</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats wrap">
+  <div class="stat reveal"><b>Advance</b><span>features in v3</span></div>
+  <div class="stat reveal d1"><b>Custom</b><span>reminder lead times</span></div>
+  <div class="stat reveal d2"><b >Multipal</b><span>themes to choose from</span></div>
+  <div class="stat reveal d3"><b >No</b><span>accounts required</span></div>
+</section>
+
+<!-- HOW -->
+<section class="sec wrap" id="how">
+  <div class="sec-head reveal">
+    <p class="eyebrow">How it works</p>
+    <h2>From scribble to schedule in three moves</h2>
+  </div>
+  <ol class="steps">
+    <li class="step reveal"><span class="num">01</span><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg></div><h3>Choose when</h3><p>Pick the weekday, or add a specific date. Plan today, next Friday or the exam week ahead.</p></li>
+    <li class="step reveal d1"><span class="num">02</span><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-pencil"/></svg></div><h3>Write it simply</h3><p>One task per line, optionally with a time or an estimate. Daybreak turns your summary into tasks automatically.</p></li>
+    <li class="step reveal d2"><span class="num">03</span><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-sliders"/></svg></div><h3>Review and adjust</h3><p>Check the suggested order, edit anything, and use Undo if a plan was replaced by mistake.</p></li>
+  </ol>
+</section>
+
+<!-- FEATURES -->
+<section class="sec wrap" id="features">
+  <div class="sec-head reveal">
+    <p class="eyebrow">Features</p>
+    <h2>Everything a calm day needs</h2>
+    <p class="sub">Tap a category to filter. Every feature exists in the Android app and the web app.</p>
+  </div>
+  <div class="filters reveal" role="tablist" aria-label="Feature categories">
+    <button class="pill active" data-f="all" role="tab" aria-selected="true">All</button>
+    <button class="pill" data-f="plan" role="tab" aria-selected="false">Plan</button>
+    <button class="pill" data-f="focus" role="tab" aria-selected="false">Focus</button>
+    <button class="pill" data-f="style" role="tab" aria-selected="false">Style</button>
+    <button class="pill" data-f="control" role="tab" aria-selected="false">Control</button>
+  </div>
+  <div class="grid" id="featGrid">
+    <article class="card reveal" data-cat="plan"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg></div><h3>Summary to tasks</h3><p>Write a plain summary and the app converts it into timed tasks for you. No forms to fill.</p></article>
+    <article class="card reveal d1" data-cat="plan"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg></div><h3>Specific day and date</h3><p>Plan for a weekday or pin tasks to an exact date. One-off events sit next to routines.</p></article>
+    <article class="card reveal d2" data-cat="focus"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg></div><h3>Smart reminders</h3><p>Get nudged 15, 10 or 5 minutes before, and again right when a task starts.</p></article>
+    <article class="card reveal d3" data-cat="focus"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></div><h3>Daily progress record</h3><p>Each day keeps a record of what you completed and when, so you can see how it really went.</p></article>
+    <article class="card reveal" data-cat="focus"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-up"/></svg></div><h3>Summary from the bottom</h3><p>Slide the day summary up from the bottom: progress ring, time planned, and your activity timeline.</p></article>
+    <article class="card reveal d1" data-cat="style"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-volume"/></svg></div><h3>Custom sound effects</h3><p>Choose a sound for checking and a different one for unchecking. Or upload your own.</p></article>
+    <article class="card reveal d2" data-cat="plan"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-note"/></svg></div><h3>Notes per task and day</h3><p>Attach a note to a specific task on a specific day, plus a short note for the whole date.</p></article>
+    <article class="card reveal d3" data-cat="plan"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-listcheck"/></svg></div><h3>Subtasks</h3><p>Break a task into smaller steps that belong to the same task and the same date.</p></article>
+    <article class="card reveal" data-cat="style"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-palette"/></svg></div><h3>Custom colour theme</h3><p>Pick any accent colour. Buttons, rings and highlights follow, with readable text colour chosen for you.</p></article>
+    <article class="card reveal d1" data-cat="style"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-image"/></svg></div><h3>Custom logo</h3><p>Swap in your own logo so the planner feels like yours.</p></article>
+    <article class="card reveal d2" data-cat="style"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-contrast"/></svg></div><h3>Dark and light</h3><p>System, light, dark, blue gray and a high contrast mode for easier reading.</p></article>
+    <article class="card reveal d3" data-cat="control"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-undo"/></svg></div><h3>Reset and Undo</h3><p>Reset a day or everything. A one-tap Undo brings it back if you slip.</p></article>
+    <article class="card reveal" data-cat="control"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></div><h3>App + web</h3><p>Use it in any browser, install it as a PWA, or grab the Android APK. Same planner everywhere.</p></article>
+  </div>
+</section>
+
+<!-- TRY IT -->
+<section class="sec try" id="try">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Try it live</p>
+      <h2>Type a plan. Watch it become a day.</h2>
+      <p class="sub">A preview of how Daybreak turns plain text into a timed schedule. It runs in your browser, nothing is sent anywhere.</p>
+    </div>
+    <div class="try-grid reveal">
+      <div class="try-in card">
+        <label for="tryText"><b>Your summary</b></label>
+        <textarea id="tryText" rows="9" spellcheck="false">Morning reset 7am 20 min
+Focus time 9am 2 hours
+Lunch break 1pm 45 min
+Revise chemistry 2:30pm 1h
+Evening walk
+Wrap up and plan tomorrow 30 min</textarea>
+        <div class="try-actions">
+          <button class="btn small" id="tryRandom" type="button"><svg class="i" aria-hidden="true"><use href="#i-shuffle"/></svg> Try another</button>
+          <a class="btn primary small" id="tryOpen" href="https://saksham07-y.github.io/Daybreak_compose/" target="_blank" rel="noopener">Open in the app <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <p class="hint">Tip: one task per line. Add a time (with AM/PM) and an estimate when you have one. Missing times follow the previous task; the first defaults to 9:00 AM, and missing durations to 30 minutes.</p>
+      </div>
+      <div class="try-out card" aria-live="polite">
+        <div class="try-head"><b>Suggested schedule</b><span id="tryTotal"></span></div>
+        <ul id="tryList" class="timeline"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE: summary sheet + sounds -->
+<section class="sec wrap" id="showcase">
+  <div class="split">
+    <div class="reveal">
+      <p class="eyebrow">Day summary</p>
+      <h2>Slide up. See how your day went.</h2>
+      <p class="lead">Pull the summary up from the bottom of the screen. A progress ring, time planned versus done, and a timeline of every task you ticked.</p>
+      <ul class="ticks">
+        <li>Live completion ring</li>
+        <li>Seven day streak bars</li>
+        <li>Activity record with timestamps</li>
+      </ul>
+    </div>
+    <div class="reveal d1">
+      <div class="sheet-demo" id="sheetDemo">
+        <div class="sd-bg">
+          <div class="sd-line w70"></div><div class="sd-line w50"></div><div class="sd-line w60"></div>
+        </div>
+        <div class="sd-sheet">
+          <div class="grab"></div>
+          <div class="ring" style="--p:0"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="rb"/><circle cx="60" cy="60" r="50" class="rf" id="ringF"/></svg><b id="ringT">0%</b></div>
+          <div class="sd-meta"><span><b>4</b> tasks</span><span><b id="sdDone">0</b> done</span><span><b>3h 20m</b> planned</span></div>
+          <div class="bars" id="bars"><i style="--h:40%"></i><i style="--h:65%"></i><i style="--h:50%"></i><i style="--h:85%"></i><i style="--h:60%"></i><i style="--h:95%"></i><i style="--h:30%"></i></div>
+        </div>
+      </div>
+      <p class="hint center">Tap the demo to see it slide.</p>
+    </div>
+  </div>
+
+  <div class="split flip" style="margin-top:84px">
+    <div class="reveal d1">
+      <div class="sound-lab card">
+        <b>Sound lab</b>
+        <p class="hint" style="margin-top:4px">Hear what checking and unchecking can sound like.</p>
+        <div class="sound-btns" id="soundBtns">
+          <button class="btn small" data-s="pop">Pop</button>
+          <button class="btn small" data-s="chime">Chime</button>
+          <button class="btn small" data-s="click">Click</button>
+          <button class="btn small" data-s="bell">Bell</button>
+          <button class="btn small" data-s="soft">Soft (uncheck)</button>
+          <button class="btn small" data-s="drop">Drop (uncheck)</button>
+        </div>
+        <label class="vol">Volume <input type="range" id="soundVol" min="0" max="100" value="60"></label>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Tick sounds</p>
+      <h2>Small sounds. Big satisfaction.</h2>
+      <p class="lead">A gentle sound when you finish a task makes finishing feel good. Pick different sounds for check and uncheck, or load your own.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THEMES -->
+<section class="sec themes" id="themes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Make it yours</p>
+      <h2>Your colours. Your logo. Your light.</h2>
+      <p class="sub">This page is the playground. Try themes and colours here to see how Daybreak can look.</p>
+    </div>
+    <div class="theme-grid reveal">
+      <div class="card">
+        <b>Theme</b>
+        <div class="theme-btns" id="themeBtns">
+          <button class="theme-btn" data-t="light"><i style="background:#f4f6fa"></i>Light</button>
+          <button class="theme-btn" data-t="dark"><i style="background:#0d1120"></i>Dark</button>
+          <button class="theme-btn" data-t="bluegray"><i style="background:#c3cfde"></i>Blue gray</button>
+          <button class="theme-btn" data-t="contrast"><i style="background:#000"></i>Contrast</button>
+          <button class="theme-btn" data-t="system"><i style="background:linear-gradient(90deg,#f4f6fa 50%,#0d1120 50%)"></i>System</button>
+        </div>
+        <b style="display:block;margin-top:22px">Accent colour</b>
+        <div class="swatches" id="swatches">
+          <button style="--c:#ff7a45" data-c="#ff7a45" aria-label="Sunrise orange"></button>
+          <button style="--c:#e0457b" data-c="#e0457b" aria-label="Rose"></button>
+          <button style="--c:#7c5cff" data-c="#7c5cff" aria-label="Violet"></button>
+          <button style="--c:#2f80ed" data-c="#2f80ed" aria-label="Blue"></button>
+          <button style="--c:#14b8a6" data-c="#14b8a6" aria-label="Teal"></button>
+          <button style="--c:#22a55b" data-c="#22a55b" aria-label="Green"></button>
+          <label class="custom-c" title="Pick any colour"><input type="color" id="customColor" value="#ff7a45"><span>+</span></label>
+        </div>
+        <button class="btn small" id="resetAccent" style="margin-top:18px">Reset colour</button>
+      </div>
+      <div class="card preview">
+        <div class="pv-head"><svg id="pvLogo" class="logo-svg" width="28" height="28" viewBox="0 0 512 512" aria-hidden="true"><use href="#i-logo"/></svg><b>daybreak<i style="color:var(--accent)">.</i></b></div>
+        <div class="pv-task"><span class="pv-check done"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><div><b>Morning reset</b><small>7:00 AM · 20 min</small></div></div>
+        <div class="pv-task"><span class="pv-check"></span><div><b>Focus time</b><small>9:00 AM · 2 h</small></div></div>
+        <div class="pv-prog"><i style="width:34%"></i></div>
+        <button class="btn primary small" type="button" onclick="window.open('https://saksham07-y.github.io/Daybreak_compose/#add', '_blank')">Add task</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE -->
+<section class="sec wrap" id="guide">
+  <div class="split">
+    <div class="reveal">
+      <p class="eyebrow">Planning guide</p>
+      <h2>Write it the way you'd say it.</h2>
+      <ol class="guide">
+        <li><b>One task per line.</b> Keep each line short and specific.</li>
+        <li><b>Add a start time.</b> Include AM or PM when it could be ambiguous.</li>
+        <li><b>Include an estimate</b> like <code>45 min</code> or <code>1.5 hours</code> when you have one.</li>
+      </ol>
+      <p class="hint">Missing times follow the previous task, and the first one starts at 9:00 AM. Missing durations default to 30 minutes. Always take a quick look and adjust.</p>
+    </div>
+    <div class="reveal d1">
+      <div class="paper">
+        <small>MY TUESDAY</small>
+<pre>Gym 6:30am 45 min
+Breakfast and emails
+Project work 10am 2h
+Lunch 1pm
+Call mum at 6 pm
+Read 30 min</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GET THE APP -->
+<section class="sec get" id="get">
+  <div class="wrap get-in">
+    <div class="reveal">
+      <p class="eyebrow light">Get Daybreak</p>
+      <h2>Install it. Anywhere.</h2>
+      <p class="lead">Use it right here in the browser, install it as an app on your phone or desktop, or download the Android build.</p>
+      <div class="cta">
+        <button class="btn primary" id="installBtn" type="button" hidden onclick="window.open('https://saksham07-y.github.io/Daybreak_compose/', '_blank')"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg> Install as app (PWA)</button>
+        <a class="btn" href="https://github.com/saksham07-y/Daybreak_compose/releases/tag/v3.0" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-android"/></svg> Android APK (v3.0)</a>
+        <a class="btn" href="https://saksham07-y.github.io/Daybreak_compose/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg> Use the web app</a>
+      </div>
+      <p class="hint" id="installHint">On iPhone: Share, then Add to Home Screen. On Chrome or Edge: use the install icon in the address bar.</p>
+    </div>
+    <div class="reveal d1 platforms">
+      <div class="pf"><b>PWA</b><span>Offline, installable, updates itself</span></div>
+      <div class="pf"><b>Android</b><span>Native build with background reminders</span></div>
+      <div class="pf"><b>Web</b><span>Any modern browser, no sign-in</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY + FAQ -->
+<section class="sec wrap" id="privacy">
+  <div class="privacy card reveal">
+    <div class="ico"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg></div>
+    <div>
+      <h2 style="margin:0 0 6px">Private by design</h2>
+      <p style="margin:0">Plans are saved in your browser's storage. There is no account and no cloud sync, so nothing leaves your device. If you clear site data, your plans go with it, so use <b>Export</b> in settings to keep a backup.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap narrow" id="faq">
+  <div class="sec-head reveal"><p class="eyebrow">Questions</p><h2>Good to know</h2></div>
+  <div class="faq">
+    <details class="reveal"><summary>Does it use AI?</summary><p>No. Daybreak uses a text parser that runs in your browser. It reads times and durations from your lines and builds an editable draft.</p></details>
+    <details class="reveal"><summary>Does my task text leave my device?</summary><p>No. Parsing happens locally. This site is a static page and uses system fonts, so there are no third party requests.</p></details>
+    <details class="reveal"><summary>Are reminders guaranteed?</summary><p>No. Browsers can pause background tabs, and phones can limit notifications to save battery. Reminders in the web app work while it is open or installed. The Android app is the more reliable choice for background alerts.</p></details>
+    <details class="reveal"><summary>Does it work on mobile?</summary><p>Yes. Open it in any mobile browser, or install it to your home screen as a PWA.</p></details>
+    <details class="reveal"><summary>What happens if I leave out a time or duration?</summary><p>A task with no time starts when the previous one ends (the first defaults to 9:00 AM). A missing duration defaults to 30 minutes. Review and edit as needed.</p></details>
+    <details class="reveal"><summary>Does it work offline?</summary><p>Yes. After your first visit, the app is cached and keeps working without a connection.</p></details>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap center reveal">
+    <h2>Start wherever you are.</h2>
+    <p class="lead">Take what helps. Leave room for the rest.</p>
+    <a class="btn primary" href="https://saksham07-y.github.io/Daybreak_compose/" target="_blank" rel="noopener">Open Daybreak <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a class="logo" href="#top"><svg class="logo-svg" width="28" height="28" viewBox="0 0 512 512" aria-hidden="true"><use href="#i-logo"/></svg><span>daybreak<i>.</i></span></a>
+      <p class="hint">A calmer way to plan your day.<br>Made by <b class="Arcar_sub_font">Arcar</b>.</p>
+    </div>
+    <div><b>Explore</b><a href="#how">How it works</a><a href="#features">Features</a><a href="#try">Try it</a><a href="#guide">Planning guide</a><a href="#faq">Questions</a></div>
+    <div><b>Get it</b><a href="https://saksham07-y.github.io/Daybreak_compose/" target="_blank" rel="noopener">Open web app</a><a href="https://github.com/saksham07-y/Daybreak_compose/releases/tag/v3.0" target="_blank" rel="noopener">Android APK</a><a href="https://github.com/saksham07-y/Daybreak_compose" target="_blank" rel="noopener">Source on GitHub</a></div>
+    <div><b>Legal and help</b><a href="https://saksham07-y.github.io/privacy.html" target="_blank" rel="noopener">Privacy policy</a><a href="https://saksham07-y.github.io/terms.html" target="_blank" rel="noopener">Terms of use</a><a href="https://saksham07-y.github.io/contact.html" target="_blank" rel="noopener">Contact</a></div>
+  </div>
+  <div class="wrap copy">© 2026 Daybreak Planner · Made for days that do not always go to plan.</div>
+</footer>
+
+<script src="js/parser.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

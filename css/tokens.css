@@ -1,0 +1,76 @@
+/* Daybreak design tokens — shared by site and planner */
+:root {
+  --bg: #f4f6fa;
+  --surface: #ffffff;
+  --surface2: #eceff6;
+  --ink: #14192b;
+  --muted: #566079;
+  --line: #dde2ed;
+  --accent: #ff7a45;
+  --accent2: #ffb347;
+  --on-accent: #1a1205;
+  --ok: #1f9d6b;
+  --danger: #d6455d;
+  --shadow: 0 10px 30px rgba(20, 25, 43, .08), 0 2px 6px rgba(20, 25, 43, .05);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --logo-bg: color-mix(in srgb, var(--accent) 82%, #000);
+  --logo-sun: #ffffff;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --bg: #0d1120; --surface: #161c31; --surface2: #1e2640; --ink: #eef1fb; --muted: #a2abc6;
+  --line: #2a3354; --shadow: 0 10px 30px rgba(0, 0, 0, .45); color-scheme: dark;
+}
+[data-theme="bluegray"] {
+  --bg: #e4eaf2; --surface: #f3f6fb; --surface2: #d6dfeb; --ink: #1b2a3b; --muted: #50627a; --line: #c3cfde;
+}
+[data-theme="contrast"] {
+  --bg: #ffffff; --surface: #ffffff; --surface2: #f0f0f0; --ink: #000000; --muted: #1a1a1a; --line: #000000;
+  --shadow: none; --accent: #b84100; --on-accent: #ffffff;
+}
+[data-theme="contrast"] .card, [data-theme="contrast"] .task, [data-theme="contrast"] button { border-width: 2px !important; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font);
+  line-height: 1.55; -webkit-font-smoothing: antialiased; transition: background .35s, color .35s;
+}
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 8px; top: -60px; background: var(--ink); color: var(--bg); padding: 10px 14px; border-radius: 8px; z-index: 999; }
+.skip:focus { top: 8px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1.5px solid var(--line); background: var(--surface); padding: 12px 20px; border-radius: 999px;
+  font-weight: 650; text-decoration: none; transition: transform .2s var(--ease), box-shadow .2s, background .2s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn.primary { background: linear-gradient(135deg, var(--accent2), var(--accent)); color: var(--on-accent); border-color: transparent; }
+.btn.small { padding: 8px 14px; font-size: .9rem; }
+.btn.danger { color: var(--danger); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+
+/* inline SVG icons */
+.i { display: inline-block; width: 1.15em; height: 1.15em; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; vertical-align: -.2em; }
+.ico .i { width: 26px; height: 26px; color: var(--accent); vertical-align: middle; }
+[data-theme="contrast"] .ico .i { color: var(--ink); }
+.btn .i, .pill .i { width: 1.1em; height: 1.1em; }
+.trust .i { color: var(--ok); width: 1em; height: 1em; stroke-width: 2.6; }
+.ico .i, .icon-btn .i, .empty-sun .i { display: block; margin: auto; }
+.chk .i { display: block; }
+
+.logo-svg { display: block; flex: none; }
